@@ -1,11 +1,11 @@
 "use client"
 
-import { Button } from '@/components/ui/button'
 import { navLinks } from '@/constants'
 import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { Button } from '../ui/button'
 
 const Sidebar = () => {
   const pathname = usePathname();
@@ -42,7 +42,7 @@ const Sidebar = () => {
               })}
               </ul>
 
-              
+
             <ul className="sidebar-nav_elements">
               {navLinks.slice(6).map((link) => {
                 const isActive = link.route === pathname
@@ -70,11 +70,11 @@ const Sidebar = () => {
               </li>
             </ul>
           </SignedIn>
-          <SignedOut>
-          <Button asChild className='Button bg-purple-gradient bg-cover'>
-            <Link href="/sign-in"> Login</Link>
-          </Button>
 
+          <SignedOut>
+            <Button asChild className="button bg-purple-gradient bg-cover">
+              <Link href="/sign-in">Login</Link>
+            </Button>
           </SignedOut>
         </nav>
       </div>

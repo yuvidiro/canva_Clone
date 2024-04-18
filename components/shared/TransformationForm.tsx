@@ -203,7 +203,7 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
             className="w-full"
             render={({ field }) => (
               <Select
-                onValueChange={(value: any) => onSelectFieldHandler(value, field.onChange)}
+                onValueChange={(value) => onSelectFieldHandler(value, field.onChange)}
                 value={field.value}
               >
                 <SelectTrigger className="select-field">
